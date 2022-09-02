@@ -23,7 +23,7 @@ search_fields=("transaction_code")
 admin.site.register(Transaction,TransctionAdmin)
 
 class CardAdmin(admin.ModelAdmin):
- list_display=("card_name","card_number","wallet","amount","")
+ list_display=("card_name","card_number")
 search_fields=("card_name","card_number")
 admin.site.register(Card,CardAdmin)
 
