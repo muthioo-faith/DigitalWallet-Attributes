@@ -1,0 +1,24 @@
+<table>
+    <th>
+        <td>Currency</td>
+        <td>pin</td>
+        <td>date created</td>
+        <td> isActive</td>
+        <td>balance </td>
+        <td>customer</td>
+
+
+
+    </th>
+    {% for wallet in wallets%}
+    <tr>
+        <td>{{wallet.Currency}}</td>
+        <td>{{wallet.pin}}</td>
+         <td>{{wallet.date_created}}</td>
+        <td>{{wallet.isActive}}</td>
+        <td>{{wallet.balance}}</td>
+        <td>{{wallet.customer}}</td>
+
+</tr>
+{%endfor%}
+</table>

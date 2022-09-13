@@ -1,0 +1,20 @@
+<table>
+    <th>
+        <td>ammount</td>
+        <td>date time</td>
+        <td>transaction</td>
+        <td>receipt type</td>
+
+
+
+    </th>
+    {% for receipt in receipts%}
+    <tr>
+        <td>{{receipt.ammount}}</td>
+        <td>{receipt.date_time}}</td>
+        <td>{{receipt.transaction}}</td>
+        <td>{{receipt.receipt_type}}</td>
+
+</tr>
+{%endfor%}
+</table>

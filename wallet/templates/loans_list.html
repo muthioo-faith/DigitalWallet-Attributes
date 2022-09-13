@@ -1,0 +1,27 @@
+<table>
+    <th>
+        <td>loan term</td>
+        <td>account Name</td>
+        <td> payment due date </td>
+        <td>wallet</td>
+        <td>Loan_balance</td>
+        <td>purpose</td>
+        <td>ammount</td>
+
+
+
+
+    </th>
+    {% for loan in loans%}
+    <tr>
+        <td>{{loan.Loan_balance}}</td>
+        <td>{{loan.account_Name}}</td>
+         <td>{{loan.payment_due_date}}</td>
+        <td>{{loan.wallet}}</td>
+        <td>{{loan.purpose}}</td>
+        <td>{{loan.ammount}}</td>
+
+
+</tr>
+{%endfor%}
+</table>
