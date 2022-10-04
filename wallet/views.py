@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import AccountRegistrationForm, CardRegistrationForm, CustomerRegistrationForm, LoanRegistrationForm, NotificationsRegistrationForm, ReceiptRegistrationForm, RewardRegistrationForm, ThirdPartyRegistrationForm, TransactionRegistrationForm, WalletRegistrationForm
 from .models import Account, Card, Customer, Loan, Notification, Receipt, Reward, ThirdParty, Wallet
 
@@ -16,6 +16,26 @@ def register_customer(request):
 def list_customer(request):
     customer=Customer.objects.all()
     return render(request,"wallet/customers_list.html",{"customers":customer})
+
+def customer_profile(request,id):
+    customer=Customer.objects.get(id=id)
+    return render(request,"customer_profile.html",
+    {"customer":customer})
+
+def edit_profile(request,id):
+    customer=Customer.objects.get(id=id)
+    if request.method=="POST":
+        form=CustomerRegistrationForm(request.POST,instance=customer)
+        if form.is_valid():
+            form.save()
+            return redirect("wallet/customer_profile",id=customer)
+    else:
+        form=CardRegistrationForm(instance=customer)
+        return render(request,"edit_profile.html",{"form":form})
+
+
+
+
 
 
 def register_wallet(request):

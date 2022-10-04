@@ -11,6 +11,16 @@ class Customer(models.Model):
     email=models.EmailField()
     phonenumber=models.CharField(max_length=10)
     age=models.PositiveSmallIntegerField()
+    # nationality =models.CharField(max_length=30)
+    # occupation=models.CharField(max_length=30)
+    # profile_picture=models.ImageField(upload_to='profile_pictures/',null=True)
+    # # date_created = models.DateTimeField(default=tim.now)
+    # dob =models.DateField()
+    # GENDER_CHOICES =(
+    #     ('M', 'Male'),
+    #     ('F', 'Female'),
+    # )
+    # gender = models.CharField(max_length=2, choices=GENDER_CHOICES, null=True)
 
 class Wallet(models.Model):
     customer = models.ForeignKey(default=1,on_delete=models.CASCADE, to = Customer)
