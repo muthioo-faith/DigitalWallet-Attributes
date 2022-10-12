@@ -2,8 +2,7 @@ from django.db import models
 from datetime import datetime
 from email import message
 
-
-# Create your models here.
+#Create your models here.
 class Customer(models.Model):
     first_name=models.CharField(max_length=15)
     last_name=models.CharField(max_length=10)

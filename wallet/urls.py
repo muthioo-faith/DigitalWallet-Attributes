@@ -25,21 +25,7 @@ urlpatterns =[
 
     path("customers/<int:id>/",customer_profile,name="customer_profile"),
     path("customers/edit/<init:id/",edit_profile,name="edit_profile"),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 ]
